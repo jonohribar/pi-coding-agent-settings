@@ -1,0 +1,112 @@
+{
+  "lastChangelogVersion": "0.87.1",
+  "theme": "dark",
+  "defaultProvider": "openrouter",
+  "defaultModel": "openrouter/free",
+  "COMMENTdefaultModel": "deepseek/deepseek-v4-flash-0731",
+  "packages": [
+    "git:github.com/elpapi42/pi-fork",
+    "npm:pi-cymbal",
+    "npm:pi-rtk-optimizer",
+    "npm:@narumitw/pi-plan-mode",
+    "npm:pi-subagents",
+    "npm:@abix5/pi-beads",
+    "npm:pi-lsp-adapter",
+    "npm:pi-web-access",
+    "npm:pi-atelier",
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:@juicesharp/rpiv-todo",
+    "npm:pi-notify",
+    "npm:pi-blackhole"
+  ],
+  "defaultThinkingLevel": "high",
+  "hideThinkingBlock": true,
+  "retry": {
+    "enabled": true,
+    "maxRetries": 8,
+    "baseDelayMs": 3000,
+    "provider": {
+      "timeoutMs": 3600000,
+      "maxRetries": 0,
+      "maxRetryDelayMs": 60000
+    }
+  },
+  "compaction": {
+    "enabled": true,
+    "reserveTokens": 16384,
+    "keepRecentTokens": 20000
+  },
+  "subagents": {
+    "defaultThinking": "medium",
+    "agentOverrides": {
+      "scout": {
+        "model": "inclusionai/ling-3.0-flash-vl:free",
+        "thinking": "low"
+      },
+      "researcher": {
+        "model": "nvidia/nemotron-3-super-120b-a12b:free",
+        "thinking": "medium"
+      },
+      "delegate": {
+        "model": "nvidia/nemotron-3-nano-30b-a3b:free",
+        "thinking": "low"
+      },
+      "worker": {
+        "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "thinking": "high"
+      },
+      "reviewer": {
+        "thinking": "high",
+        "model": "deepseek/deepseek-v4-flash-0731"
+      },
+      "oracle": {
+        "thinking": "high",
+        "model": "deepseek/deepseek-v4-flash-0731"
+      }
+    },
+    "watchdog": {
+      "enabled": true,
+      "main": {
+        "enabled": true,
+        "model": "deepseek/deepseek-v4-flash-0731",
+        "thinking": "high"
+      }
+    }
+  },
+  "enabledModels": [
+    "openrouter/deepseek/deepseek-v4-flash-0731",
+    "openrouter/z-ai/glm-5.3-flash",
+    "openrouter/openrouter/free",
+    "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
+    "openrouter/nvidia/nemotron-3-super-120b-a12b:free"
+  ],
+  "defaultPlanTools": [
+    "read",
+    "bash",
+    "grep",
+    "find",
+    "ls",
+    "subagent"
+  ],
+  "allowedPlanSubagents": [
+    "scout",
+    "researcher",
+    "oracle"
+  ],
+  "dashboard": {
+    "canvasTypes": {
+      "markdown": false,
+      "asciidoc": true,
+      "docx": true,
+      "pptx": true,
+      "spreadsheet": true,
+      "html": true,
+      "pdf": true,
+      "video": true,
+      "audio": true,
+      "image": true,
+      "youtube": true,
+      "email": true
+    }
+  }
+}
