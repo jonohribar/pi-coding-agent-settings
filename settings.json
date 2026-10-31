@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.87.1",
+  "lastChangelogVersion": "1.4.0",
   "theme": "dark",
   "defaultProvider": "openrouter",
   "defaultModel": "openrouter/free",
@@ -40,7 +40,7 @@
     "defaultThinking": "medium",
     "agentOverrides": {
       "scout": {
-        "model": "inclusionai/ling-3.0-flash-vl:free",
+        "model": "openrouter/cohere/north-mini-code:free",
         "thinking": "low"
       },
       "researcher": {
@@ -48,7 +48,7 @@
         "thinking": "medium"
       },
       "delegate": {
-        "model": "nvidia/nemotron-3-nano-30b-a3b:free",
+        "model": "openrouter/nvidia/nemotron-3.5-lightning:free",
         "thinking": "low"
       },
       "worker": {
@@ -74,6 +74,8 @@
     }
   },
   "enabledModels": [
+    "openrouter/cohere/north-mini-code:free",
+    "openrouter/nvidia/nemotron-3.5-lightning:free",
     "openrouter/deepseek/deepseek-v4-flash-0731",
     "openrouter/z-ai/glm-5.3-flash",
     "openrouter/openrouter/free",
