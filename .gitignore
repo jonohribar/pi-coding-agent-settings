@@ -5,4 +5,5 @@ git/
 bin/
 lsp/
 npm/
+install/
 models-store.json
