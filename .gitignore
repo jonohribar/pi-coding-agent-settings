@@ -1,9 +1,27 @@
+# Pi artifacts
 sessions/
-missions/
+install/
+npm/
+pi-subagents/
+models-store.json
+
+# Extension artifacts
 pi-blackhole/
 git/
 bin/
 lsp/
-npm/
-install/
-models-store.json
+fff/
+## I think this is throwaway from previous extension
+missions/      
+
+# Secrets
+auth.json
+
+# PC specific settings
+trust.json
+## might make this a official if we can standardize it across setups
+lsp.json            
+## might make this an official if we can standardize it across setups
+models.json         
+## I think this is throwaway from previous extension
+run-history.jsonl   

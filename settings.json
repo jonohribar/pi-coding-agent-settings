@@ -1,9 +1,9 @@
 {
-  "lastChangelogVersion": "1.4.0",
+  "lastChangelogVersion": "1.5.0",
   "theme": "dark",
   "defaultProvider": "openrouter",
   "defaultModel": "openrouter/free",
-  "COMMENTdefaultModel": "deepseek/deepseek-v4-flash-0731",
+  "COMMENTdefaultModel": "openrouter/deepseek/deepseek-v4-flash-0731",
   "packages": [
     "git:github.com/elpapi42/pi-fork",
     "npm:pi-cymbal",
@@ -17,7 +17,9 @@
     "npm:@juicesharp/rpiv-ask-user-question",
     "npm:@juicesharp/rpiv-todo",
     "npm:pi-notify",
-    "npm:pi-blackhole"
+    "npm:@ff-labs/pi-fff",
+    "npm:pi-blackhole",
+    "npm:pi-open-tui"
   ],
   "defaultThinkingLevel": "high",
   "hideThinkingBlock": true,
@@ -40,11 +42,11 @@
     "defaultThinking": "medium",
     "agentOverrides": {
       "scout": {
-        "model": "openrouter/cohere/north-mini-code:free",
+        "model": "openrouter/nvidia/nemotron-3.5-lightning:free",
         "thinking": "low"
       },
       "researcher": {
-        "model": "nvidia/nemotron-3-super-120b-a12b:free",
+        "model": "openrouter/nvidia/nemotron-3.5-super-vl:free",
         "thinking": "medium"
       },
       "delegate": {
@@ -52,63 +54,33 @@
         "thinking": "low"
       },
       "worker": {
-        "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "model": "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
         "thinking": "high"
       },
       "reviewer": {
         "thinking": "high",
-        "model": "deepseek/deepseek-v4-flash-0731"
+        "model": "openrouter/deepseek/deepseek-v4-flash-0731"
       },
       "oracle": {
         "thinking": "high",
-        "model": "deepseek/deepseek-v4-flash-0731"
+        "model": "openrouter/z-ai/glm-5.3-flash"
       }
     },
     "watchdog": {
       "enabled": true,
       "main": {
         "enabled": true,
-        "model": "deepseek/deepseek-v4-flash-0731",
+        "model": "openrouter/deepseek/deepseek-v4-flash-0731",
         "thinking": "high"
       }
     }
   },
   "enabledModels": [
-    "openrouter/cohere/north-mini-code:free",
-    "openrouter/nvidia/nemotron-3.5-lightning:free",
     "openrouter/deepseek/deepseek-v4-flash-0731",
     "openrouter/z-ai/glm-5.3-flash",
-    "openrouter/openrouter/free",
-    "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free",
-    "openrouter/nvidia/nemotron-3-super-120b-a12b:free"
-  ],
-  "defaultPlanTools": [
-    "read",
-    "bash",
-    "grep",
-    "find",
-    "ls",
-    "subagent"
-  ],
-  "allowedPlanSubagents": [
-    "scout",
-    "researcher",
-    "oracle"
-  ],
-  "dashboard": {
-    "canvasTypes": {
-      "markdown": false,
-      "asciidoc": true,
-      "docx": true,
-      "pptx": true,
-      "spreadsheet": true,
-      "html": true,
-      "pdf": true,
-      "video": true,
-      "audio": true,
-      "image": true,
-      "youtube": true,
-      "email": true
-    }
-  }
+    "openrouter/free",
+    "openrouter/nvidia/nemotron-3-super-120b-a12b",
+    "Ollama/qwen3.8:latest",
+    "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+  ]
 }

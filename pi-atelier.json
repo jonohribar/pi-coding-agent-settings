@@ -1,3 +1,4 @@
 {
-  "nerdFont": false
+  "showSidebarToolNames": true,
+  "nerdFont": true
 }
